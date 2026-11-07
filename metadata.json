@@ -1,0 +1,6 @@
+{
+  "name": "CBT SMKS Kesehatan Unaaha",
+  "description": "Aplikasi Ujian Sekolah Computer Based Test (CBT) resmi SMKS Kesehatan Unaaha untuk Kompetensi Keahlian Keperawatan dan Farmasi.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
