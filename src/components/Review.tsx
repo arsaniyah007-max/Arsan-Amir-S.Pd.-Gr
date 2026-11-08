@@ -5,7 +5,8 @@
 
 import React, { useState } from "react";
 import { StudentResult, Question } from "../types";
-import { Award, Printer, LogOut, CheckCircle2, XCircle, HelpCircle, FileText, ChevronDown, ChevronUp, ShieldCheck } from "lucide-react";
+import { Award, Printer, LogOut, CheckCircle2, XCircle, HelpCircle, FileText, ChevronDown, ChevronUp, ShieldCheck, Download, FileSpreadsheet } from "lucide-react";
+import { downloadSingleStudentHTML, downloadSingleStudentCSV } from "../utils/downloadResults";
 
 interface ReviewProps {
   result: StudentResult;
@@ -15,13 +16,24 @@ interface ReviewProps {
 
 export default function Review({ result, questions, onExit }: ReviewProps) {
   const [showDetailedReview, setShowDetailedReview] = useState(false);
+  const [showDownloadMenu, setShowDownloadMenu] = useState(false);
 
-  // KKM standard is 75 in SMKS Kesehatan Unaaha
-  const KKM = 75;
+  // KKM standard is 70 in SMKS Kesehatan Unaaha
+  const KKM = 70;
   const isLulus = result.score >= KKM;
 
   const handlePrint = () => {
     window.print();
+  };
+
+  const handleDownloadHTML = () => {
+    downloadSingleStudentHTML(result, questions);
+    setShowDownloadMenu(false);
+  };
+
+  const handleDownloadCSV = () => {
+    downloadSingleStudentCSV(result);
+    setShowDownloadMenu(false);
   };
 
   return (
@@ -98,27 +110,66 @@ export default function Review({ result, questions, onExit }: ReviewProps) {
           </div>
         </div>
 
-        {/* Exit Controls */}
-        <div className="bg-stone-50 p-4 sm:p-6 border-t border-stone-200 flex flex-col sm:flex-row gap-3 justify-between items-center">
-          <button
-            id="btn-back-to-portal"
-            type="button"
-            className="w-full sm:w-auto bg-stone-100 hover:bg-stone-200 text-stone-700 font-bold py-3 px-6 rounded-xl border border-stone-300 transition text-xs flex items-center justify-center gap-2 cursor-pointer"
-            onClick={onExit}
-          >
-            <LogOut className="w-4.5 h-4.5" />
-            KEMBALI KE BERANDA
-          </button>
+        {/* Action Controls & Download Menu */}
+        <div className="bg-stone-50 p-4 sm:p-6 border-t border-stone-200 space-y-3">
+          <div className="flex items-center justify-between flex-wrap gap-2">
+            <span className="text-[11px] font-black uppercase text-stone-500 tracking-wider font-mono flex items-center gap-1.5">
+              <Download className="w-4 h-4 text-emerald-600" />
+              MENU DOWNLOAD & DOKUMEN HASIL SISWA:
+            </span>
+            <span className="text-[10px] text-stone-400 font-medium">
+              Simpan laporan hasil ujian ini ke perangkat Anda
+            </span>
+          </div>
 
-          <button
-            id="btn-print-certificate"
-            type="button"
-            className="w-full sm:w-auto bg-emerald-700 hover:bg-emerald-800 text-white font-extrabold py-3 px-6 rounded-xl shadow border-b-4 border-emerald-900 transition text-xs flex items-center justify-center gap-2 cursor-pointer"
-            onClick={handlePrint}
-          >
-            <Printer className="w-4.5 h-4.5" />
-            CETAK SERTIFIKAT HASIL (PDF)
-          </button>
+          <div className="flex flex-col sm:flex-row flex-wrap gap-2.5 items-center justify-between">
+            <button
+              id="btn-back-to-portal"
+              type="button"
+              className="w-full sm:w-auto bg-stone-100 hover:bg-stone-200 text-stone-700 font-bold py-2.5 px-4 rounded-xl border border-stone-300 transition text-xs flex items-center justify-center gap-2 cursor-pointer order-last sm:order-first"
+              onClick={onExit}
+            >
+              <LogOut className="w-4 h-4" />
+              KEMBALI KE BERANDA
+            </button>
+
+            <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
+              {/* Button: Download HTML/PDF */}
+              <button
+                id="btn-download-hasil-html"
+                type="button"
+                className="bg-emerald-650 hover:bg-emerald-750 text-white font-extrabold py-2.5 px-4 rounded-xl shadow-md border-b-2 border-emerald-850 transition text-xs flex items-center justify-center gap-2 cursor-pointer"
+                onClick={handleDownloadHTML}
+                title="Download Laporan Resmi Lengkap Beserta Kop Surat dan Kunci Jawaban (Format HTML/PDF)"
+              >
+                <Download className="w-4 h-4" />
+                DOWNLOAD HASIL (DOKUMEN / PDF)
+              </button>
+
+              {/* Button: Download CSV/Excel */}
+              <button
+                id="btn-download-hasil-csv"
+                type="button"
+                className="bg-teal-700 hover:bg-teal-800 text-white font-extrabold py-2.5 px-4 rounded-xl shadow-md border-b-2 border-teal-900 transition text-xs flex items-center justify-center gap-2 cursor-pointer"
+                onClick={handleDownloadCSV}
+                title="Download Rekapitulasi Nilai Siswa untuk Microsoft Excel / Spreadsheet (Format CSV)"
+              >
+                <FileSpreadsheet className="w-4 h-4" />
+                DOWNLOAD HASIL (EXCEL / CSV)
+              </button>
+
+              {/* Button: Print Certificate */}
+              <button
+                id="btn-print-certificate"
+                type="button"
+                className="bg-stone-850 hover:bg-stone-900 text-white font-extrabold py-2.5 px-4 rounded-xl shadow border-b-2 border-stone-950 transition text-xs flex items-center justify-center gap-2 cursor-pointer"
+                onClick={handlePrint}
+              >
+                <Printer className="w-4 h-4" />
+                CETAK SERTIFIKAT
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -132,14 +183,13 @@ export default function Review({ result, questions, onExit }: ReviewProps) {
 
         {/* Header containing Emblem copy */}
         <div className="text-center space-y-2 border-b-2 border-slate-300 pb-4 relative z-10">
-          <div className="flex items-center justify-center gap-3">
-            {/* Embedded inline vector badge */}
-            <svg viewBox="0 0 100 100" className="w-16 h-16 shrink-0">
-              <circle cx="50" cy="50" r="45" fill="none" stroke="#047857" strokeWidth="3" />
-              <rect x="43" y="25" width="14" height="36" rx="2" fill="#10b981" />
-              <rect x="31" y="36" width="38" height="14" rx="2" fill="#10b981" />
-              <path d="M28 65 C35 61 45 62 50 66 C55 62 65 61 72 65 L72 75 C65 71 55 72 50 76 C45 72 35 71 28 75 Z" fill="#1e1b4b" />
-            </svg>
+          <div className="flex items-center justify-center gap-4">
+            {/* Official School Logo */}
+            <img
+              src="/logo-smk.png"
+              alt="Logo SMKS Kesehatan Unaaha"
+              className="w-16 h-16 object-contain shrink-0"
+            />
             <div>
               <h3 className="text-xs font-bold tracking-widest text-emerald-800 font-mono">
                 KEMENTERIAN PENDIDIKAN, KEBUDAYAAN, RISET, DAN TEKNOLOGI
@@ -148,7 +198,7 @@ export default function Review({ result, questions, onExit }: ReviewProps) {
                 SMKS KESEHATAN UNAAHA
               </h2>
               <p className="text-[10px] text-stone-500">
-                Alamat: Konawe, Prov. Sulawesi Tenggara • NPSN: 6072xxxx • Izin Operasional Klinik No. 440/12
+                Alamat: Jl. Edi Sabara, Kelurahan Asinua, Kecamatan Unaaha • NPSN: 69888924 • Terakreditasi
               </p>
             </div>
           </div>
@@ -248,6 +298,11 @@ export default function Review({ result, questions, onExit }: ReviewProps) {
             </p>
             <p className="text-[10px] text-stone-400 font-mono">NIP. 19840214 200903 1 002</p>
           </div>
+        </div>
+
+        {/* Certificate copyright footer */}
+        <div className="mt-6 pt-3 border-t border-emerald-100 text-[10px] text-stone-400 font-mono text-center">
+          HAK CIPTA SMKS KESEHATAN UNAAHA - Arsan Amir
         </div>
       </div>
 

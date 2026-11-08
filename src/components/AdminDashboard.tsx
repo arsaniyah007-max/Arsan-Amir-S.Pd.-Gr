@@ -5,7 +5,8 @@
 
 import React, { useState, useEffect } from "react";
 import { Subject, Question, StudentResult, Jurusan, Kelas } from "../types";
-import { BookOpen, User, Users, ClipboardList, Settings, Award, ArrowLeft, RefreshCw, Trash2, Plus, Edit, Check, Settings2, BarChart3, Pill, ShieldCheck, PlusCircle, ClipboardCheck, FileSpreadsheet, TrendingUp, Printer } from "lucide-react";
+import { BookOpen, User, Users, ClipboardList, Settings, Award, ArrowLeft, RefreshCw, Trash2, Plus, Edit, Check, Settings2, BarChart3, Pill, ShieldCheck, PlusCircle, ClipboardCheck, FileSpreadsheet, TrendingUp, Printer, Download } from "lucide-react";
+import { downloadSingleStudentHTML, downloadSingleStudentCSV, downloadAllStudentsCSV } from "../utils/downloadResults";
 
 interface AdminDashboardProps {
   subjects: Subject[];
@@ -406,7 +407,7 @@ export default function AdminDashboard({ subjects, defaultQuestions, onExit, onR
     targetResult.correctAnswers = correctCount;
     targetResult.incorrectAnswers = totalQ - correctCount;
     targetResult.score = totalQ > 0 ? Math.round((correctCount / totalQ) * 100) : 0;
-    targetResult.passed = targetResult.score >= 75;
+    targetResult.passed = targetResult.score >= 70;
 
     const updatedResults = [...results];
     updatedResults[resultIdx] = targetResult;
@@ -448,7 +449,7 @@ export default function AdminDashboard({ subjects, defaultQuestions, onExit, onR
     targetResult.score = parsedScore;
     targetResult.correctAnswers = finalCorrect;
     targetResult.incorrectAnswers = Math.max(0, totalQ - finalCorrect);
-    targetResult.passed = parsedScore >= 75;
+    targetResult.passed = parsedScore >= 70;
     
     const updatedResults = [...results];
     updatedResults[resultIdx] = targetResult;
@@ -476,7 +477,7 @@ export default function AdminDashboard({ subjects, defaultQuestions, onExit, onR
   // Calculations for static analytics
   const filteredQuestions = allQuestions.filter(q => q.subjectId === selectedSubjectId);
   const totalSubmissions = results.length;
-  const passedSubmissions = results.filter(r => r.score >= 75).length;
+  const passedSubmissions = results.filter(r => r.score >= 70).length;
   const passRate = totalSubmissions > 0 ? Math.round((passedSubmissions / totalSubmissions) * 100) : 0;
   
   const averageScore = totalSubmissions > 0 
@@ -560,13 +561,13 @@ export default function AdminDashboard({ subjects, defaultQuestions, onExit, onR
               RATA-RATA SKOR KELAS
             </span>
             <div className="text-3xl font-black text-emerald-900 mt-1 font-mono">{averageScore} <span className="text-xs text-stone-400 font-normal">/ 100</span></div>
-            <p className="text-[10px] text-stone-500 font-medium">Batas ketuntasan minimal (KKM) adalah 75</p>
+            <p className="text-[10px] text-stone-500 font-medium">Batas ketuntasan minimal (KKM) adalah 70</p>
           </div>
         </div>
 
         {/* Metric 3 */}
         <div className="bg-white rounded-2xl shadow-md border border-stone-200 p-5 flex items-center gap-4">
-          <div className={`p-3.5 rounded-2xl ${passRate >= 75 ? "bg-emerald-100 text-emerald-800" : "bg-amber-100 text-amber-800"}`}>
+          <div className={`p-3.5 rounded-2xl ${passRate >= 70 ? "bg-emerald-100 text-emerald-800" : "bg-amber-100 text-amber-800"}`}>
             <BarChart3 className="w-8 h-8" />
           </div>
           <div>
@@ -641,8 +642,8 @@ export default function AdminDashboard({ subjects, defaultQuestions, onExit, onR
           </div>
           
           {/* Custom helper stats indicator in top right of tabs */}
-          <div className="text-xs text-stone-400 font-semibold font-mono hidden md:block">
-            Kode Lisensi: SMKS-KU-2026-ACTIVE
+          <div className="text-xs text-stone-500 font-semibold font-mono hidden md:block">
+            Hak Cipta SMKS Kesehatan Unaaha - Arsan Amir
           </div>
         </div>
 
@@ -658,15 +659,28 @@ export default function AdminDashboard({ subjects, defaultQuestions, onExit, onR
               </div>
 
               {results.length > 0 && (
-                <button
-                  id="btn-admin-clear-all"
-                  type="button"
-                  onClick={handleClearAllResults}
-                  className="bg-red-50 hover:bg-red-100 text-red-700 font-bold py-2 px-4 rounded-xl text-xs transition border border-red-200 cursor-pointer flex items-center gap-1"
-                >
-                  <Trash2 className="w-3.5 h-3.5" />
-                  Kosongkan Semua Arsip
-                </button>
+                <div className="flex flex-wrap items-center gap-2">
+                  <button
+                    id="btn-admin-download-all-csv"
+                    type="button"
+                    onClick={() => downloadAllStudentsCSV(results)}
+                    className="bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-2 px-3.5 rounded-xl text-xs transition shadow cursor-pointer flex items-center gap-1.5"
+                    title="Download seluruh data hasil ujian siswa dalam format file Excel / CSV"
+                  >
+                    <Download className="w-4 h-4" />
+                    Download Semua Hasil (Excel / CSV)
+                  </button>
+
+                  <button
+                    id="btn-admin-clear-all"
+                    type="button"
+                    onClick={handleClearAllResults}
+                    className="bg-red-50 hover:bg-red-100 text-red-700 font-bold py-2 px-3.5 rounded-xl text-xs transition border border-red-200 cursor-pointer flex items-center gap-1"
+                  >
+                    <Trash2 className="w-3.5 h-3.5" />
+                    Kosongkan Semua Arsip
+                  </button>
+                </div>
               )}
             </div>
 
@@ -694,7 +708,7 @@ export default function AdminDashboard({ subjects, defaultQuestions, onExit, onR
                   </thead>
                   <tbody className="divide-y divide-stone-200 font-semibold text-stone-850">
                     {results.map((res) => {
-                      const isLulusItem = res.score >= 75;
+                      const isLulusItem = res.score >= 70;
                       return (
                         <tr key={res.id} className="hover:bg-indigo-50/20 transition">
                           <td className="px-4 py-3">
@@ -725,15 +739,41 @@ export default function AdminDashboard({ subjects, defaultQuestions, onExit, onR
                             </span>
                           </td>
                           <td className="px-4 py-3 text-right">
-                            <button
-                              id={`delete-res-${res.id}`}
-                              type="button"
-                              onClick={() => handleDeleteResult(res.id)}
-                              className="p-1.5 bg-red-50 hover:bg-red-100 text-red-600 rounded-lg transition border border-red-200 focus:outline-none cursor-pointer"
-                              title="Hapus / Reset"
-                            >
-                              <Trash2 className="w-4.5 h-4.5" />
-                            </button>
+                            <div className="flex items-center justify-end gap-1.5">
+                              {/* Download Official Document (HTML/PDF) */}
+                              <button
+                                id={`download-html-${res.id}`}
+                                type="button"
+                                onClick={() => downloadSingleStudentHTML(res, allQuestions)}
+                                className="p-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 rounded-lg transition border border-emerald-300 focus:outline-none cursor-pointer flex items-center gap-1 text-[11px] font-bold"
+                                title="Download Lembar Laporan Hasil Lengkap Siswa Ini (Format HTML/PDF)"
+                              >
+                                <Download className="w-3.5 h-3.5" />
+                                <span className="hidden sm:inline">Download</span>
+                              </button>
+
+                              {/* Download CSV / Excel */}
+                              <button
+                                id={`download-csv-${res.id}`}
+                                type="button"
+                                onClick={() => downloadSingleStudentCSV(res)}
+                                className="p-1.5 bg-teal-50 hover:bg-teal-100 text-teal-700 rounded-lg transition border border-teal-300 focus:outline-none cursor-pointer"
+                                title="Download Nilai Siswa Ini Format CSV / Excel"
+                              >
+                                <FileSpreadsheet className="w-3.5 h-3.5" />
+                              </button>
+
+                              {/* Delete Action */}
+                              <button
+                                id={`delete-res-${res.id}`}
+                                type="button"
+                                onClick={() => handleDeleteResult(res.id)}
+                                className="p-1.5 bg-red-50 hover:bg-red-100 text-red-600 rounded-lg transition border border-red-200 focus:outline-none cursor-pointer"
+                                title="Hapus / Reset"
+                              >
+                                <Trash2 className="w-3.5 h-3.5" />
+                              </button>
+                            </div>
                           </td>
                         </tr>
                       );
@@ -1226,8 +1266,8 @@ export default function AdminDashboard({ subjects, defaultQuestions, onExit, onR
                       const matchesSubject = recapSubject === "all" || res.subjectId === recapSubject;
                       const matchesStatus =
                         recapStatus === "all" ||
-                        (recapStatus === "lulus" && res.score >= 75) ||
-                        (recapStatus === "remedi" && res.score < 75);
+                        (recapStatus === "lulus" && res.score >= 70) ||
+                        (recapStatus === "remedi" && res.score < 70);
                       
                       if (matchesSearch && matchesJurusan && matchesKelas && matchesSubject && matchesStatus) {
                         return [
@@ -1240,7 +1280,7 @@ export default function AdminDashboard({ subjects, defaultQuestions, onExit, onR
                           res.correctAnswers,
                           res.totalQuestions,
                           res.score,
-                          res.score >= 75 ? "KOMPETEN" : "REMEDIAL"
+                          res.score >= 70 ? "KOMPETEN" : "REMEDIAL"
                         ];
                       }
                       return null;
@@ -1268,6 +1308,34 @@ export default function AdminDashboard({ subjects, defaultQuestions, onExit, onR
                 <button
                   type="button"
                   onClick={() => {
+                    const filteredData = results.filter((res) => {
+                      const matchesSearch = 
+                        res.student.nama.toLowerCase().includes(recapSearch.toLowerCase()) ||
+                        res.student.nisn.toLowerCase().includes(recapSearch.toLowerCase());
+                      const matchesJurusan = recapJurusan === "all" || res.student.jurusan.toLowerCase() === recapJurusan.toLowerCase();
+                      const matchesKelas = recapKelas === "all" || res.student.kelas.toLowerCase() === recapKelas.toLowerCase();
+                      const matchesSubject = recapSubject === "all" || res.subjectId === recapSubject;
+                      const matchesStatus =
+                        recapStatus === "all" ||
+                        (recapStatus === "lulus" && res.score >= 70) ||
+                        (recapStatus === "remedi" && res.score < 70);
+                      return matchesSearch && matchesJurusan && matchesKelas && matchesSubject && matchesStatus;
+                    });
+                    if (filteredData.length === 0) {
+                      alert("Tidak ada data hasil siswa yang sesuai dengan filter untuk didownload.");
+                      return;
+                    }
+                    downloadAllStudentsCSV(filteredData);
+                  }}
+                  className="bg-teal-700 hover:bg-teal-800 text-white font-extrabold text-xs py-2 px-4 rounded-xl shadow transition cursor-pointer flex items-center gap-1.5"
+                >
+                  <Download className="w-4 h-4" />
+                  Download Rekap (File CSV/Excel)
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => {
                     const printWindow = window.open("", "_blank");
                     if (!printWindow) {
                       alert("Tolong izinkan akses popup peramban Anda untuk mencetak rekapitulasi.");
@@ -1283,8 +1351,8 @@ export default function AdminDashboard({ subjects, defaultQuestions, onExit, onR
                       const matchesSubject = recapSubject === "all" || res.subjectId === recapSubject;
                       const matchesStatus =
                         recapStatus === "all" ||
-                        (recapStatus === "lulus" && res.score >= 75) ||
-                        (recapStatus === "remedi" && res.score < 75);
+                        (recapStatus === "lulus" && res.score >= 70) ||
+                        (recapStatus === "remedi" && res.score < 70);
                       return matchesSearch && matchesJurusan && matchesKelas && matchesSubject && matchesStatus;
                     });
 
@@ -1296,8 +1364,8 @@ export default function AdminDashboard({ subjects, defaultQuestions, onExit, onR
                         <td style="padding: 10px;">${res.student.kelas} - ${res.student.jurusan}</td>
                         <td style="padding: 10px;">${res.subjectName}</td>
                         <td style="padding: 10px; text-align: center;">${res.correctAnswers} / ${res.totalQuestions}</td>
-                        <td style="padding: 10px; text-align: center; font-family: monospace; font-weight: bold; color: ${res.score >= 75 ? "green" : "red"};">${res.score}</td>
-                        <td style="padding: 10px; font-weight: bold; color: ${res.score >= 75 ? "green" : "red"};">${res.score >= 75 ? "KOMPETEN" : "REMEDIAL"}</td>
+                        <td style="padding: 10px; text-align: center; font-family: monospace; font-weight: bold; color: ${res.score >= 70 ? "green" : "red"};">${res.score}</td>
+                        <td style="padding: 10px; font-weight: bold; color: ${res.score >= 70 ? "green" : "red"};">${res.score >= 70 ? "KOMPETEN" : "REMEDIAL"}</td>
                       </tr>
                     `).join("");
 
@@ -1317,10 +1385,13 @@ export default function AdminDashboard({ subjects, defaultQuestions, onExit, onR
                           </style>
                         </head>
                         <body>
-                          <div class="header">
-                            <h2 style="margin: 0; text-transform: uppercase;">SMKS Kesehatan Unaaha</h2>
-                            <p style="margin: 5px 0 0 0;" class="logo-sub">Jl. Inolobunggadue No. 84, Unaaha, Sulawesi Tenggara</p>
-                            <h3 style="margin: 15px 0 0 0; text-decoration: underline;">REKAPITULASI DAFTAR NILAI KOMPETENSI SISWA</h3>
+                          <div class="header" style="display: flex; align-items: center; justify-content: center; gap: 18px; text-align: left;">
+                            <img src="/logo-smk.png" alt="Logo SMKS Kesehatan Unaaha" style="width: 70px; height: 70px; object-fit: contain;" />
+                            <div>
+                              <h2 style="margin: 0; text-transform: uppercase;">SMKS Kesehatan Unaaha</h2>
+                              <p style="margin: 4px 0 0 0;" class="logo-sub">Jl. Edi Sabara, Kelurahan Asinua, Kecamatan Unaaha, Kabupaten Konawe, Sulawesi Tenggara</p>
+                              <h3 style="margin: 10px 0 0 0; text-decoration: underline;">REKAPITULASI DAFTAR NILAI KOMPETENSI SISWA</h3>
+                            </div>
                           </div>
                           <p style="font-size: 12px; color: #666;">Dicetak pada: ${nowStr}</p>
                           <table>
@@ -1443,8 +1514,8 @@ export default function AdminDashboard({ subjects, defaultQuestions, onExit, onR
                     onChange={(e) => setRecapStatus(e.target.value)}
                   >
                     <option value="all">Semua Hasil</option>
-                    <option value="lulus">Kompeten (≥ 75)</option>
-                    <option value="remedi">Remedial (&lt; 75)</option>
+                    <option value="lulus">Kompeten (≥ 70)</option>
+                    <option value="remedi">Remedial (&lt; 70)</option>
                   </select>
                 </div>
               </div>
@@ -1478,11 +1549,11 @@ export default function AdminDashboard({ subjects, defaultQuestions, onExit, onR
                   res.student.nisn.toLowerCase().includes(recapSearch.toLowerCase());
                 const matchesJurusan = recapJurusan === "all" || res.student.jurusan.toLowerCase() === recapJurusan.toLowerCase();
                 const matchesKelas = recapKelas === "all" || res.student.kelas.toLowerCase() === recapKelas.toLowerCase();
-                const matchesSubject = recapSubject === "all" || res.subjectId === recapSubject;
+                  const matchesSubject = recapSubject === "all" || res.subjectId === recapSubject;
                 const matchesStatus =
                   recapStatus === "all" ||
-                  (recapStatus === "lulus" && res.score >= 75) ||
-                  (recapStatus === "remedi" && res.score < 75);
+                  (recapStatus === "lulus" && res.score >= 70) ||
+                  (recapStatus === "remedi" && res.score < 70);
                 return matchesSearch && matchesJurusan && matchesKelas && matchesSubject && matchesStatus;
               });
 
@@ -1491,7 +1562,7 @@ export default function AdminDashboard({ subjects, defaultQuestions, onExit, onR
               const avg = count > 0 ? Math.round(scores.reduce((a, b) => a + b, 0) / count) : 0;
               const maxVal = count > 0 ? Math.max(...scores) : 0;
               const minVal = count > 0 ? Math.min(...scores) : 0;
-              const passedCount = filteredData.filter(r => r.score >= 75).length;
+              const passedCount = filteredData.filter(r => r.score >= 70).length;
               const passedPercent = count > 0 ? Math.round((passedCount / count) * 100) : 0;
 
               return (
@@ -1505,7 +1576,7 @@ export default function AdminDashboard({ subjects, defaultQuestions, onExit, onR
                   <div className="bg-gradient-to-br from-indigo-50 to-indigo-100/70 p-4 rounded-2xl border border-indigo-100">
                     <span className="text-[10px] font-black text-indigo-500 block uppercase tracking-wider">RATA-RATA (MEAN)</span>
                     <span className="text-3xl font-black text-indigo-900 font-mono block mt-1">{avg}</span>
-                    <span className="text-[10px] text-indigo-600 font-medium">KKM Sekolah: 75</span>
+                    <span className="text-[10px] text-indigo-600 font-medium">KKM Sekolah: 70</span>
                   </div>
 
                   <div className="bg-gradient-to-br from-emerald-50 to-emerald-100/70 p-4 rounded-2xl border border-emerald-100">
@@ -1552,8 +1623,8 @@ export default function AdminDashboard({ subjects, defaultQuestions, onExit, onR
                         const matchesSubject = recapSubject === "all" || res.subjectId === recapSubject;
                         const matchesStatus =
                           recapStatus === "all" ||
-                          (recapStatus === "lulus" && res.score >= 75) ||
-                          (recapStatus === "remedi" && res.score < 75);
+                          (recapStatus === "lulus" && res.score >= 70) ||
+                          (recapStatus === "remedi" && res.score < 70);
                         return matchesSearch && matchesJurusan && matchesKelas && matchesSubject && matchesStatus;
                       });
 
@@ -1584,11 +1655,11 @@ export default function AdminDashboard({ subjects, defaultQuestions, onExit, onR
                           </td>
                           <td className="py-3.5 px-4">
                             <span className={`px-2.5 py-1 rounded-full text-[9px] font-black uppercase tracking-wider inline-block ${
-                              res.score >= 75 
+                              res.score >= 70 
                                 ? "bg-emerald-100 text-emerald-800" 
                                 : "bg-red-100 text-red-800"
                             }`}>
-                              {res.score >= 75 ? "KOMPETEN (LULUS)" : "REMEDIAL"}
+                              {res.score >= 70 ? "KOMPETEN (LULUS)" : "REMEDIAL"}
                             </span>
                           </td>
                         </tr>

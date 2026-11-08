@@ -42,31 +42,14 @@ export default function Header({ currentStudent, isAdmin }: HeaderProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
         {/* Left Side: School Emblem & Name */}
         <div className="flex items-center gap-4 text-center md:text-left">
-          {/* Circular SVG school emblem - highly detailed healthcare & education hybrid */}
-          <div className="relative w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-yellow-400 flex-shrink-0 animate-pulse-slow">
-            <svg viewBox="0 0 100 100" className="w-14 h-14">
-              {/* Outer circle with dots */}
-              <circle cx="50" cy="50" r="45" fill="none" stroke="#047857" strokeWidth="2.5" />
-              <circle cx="50" cy="50" r="39" fill="none" stroke="#1e1b4b" strokeWidth="1" strokeDasharray="3,3" />
-              
-              {/* Green star shape or cross backdrop */}
-              <path d="M50 8 L54 35 L80 30 L60 50 L78 72 L50 62 L22 72 L40 50 L20 30 L46 35 Z" fill="#ecfdf5" opacity="0.6"/>
-              
-              {/* Red/Green Medical Cross indicating Health school */}
-              <rect x="44" y="28" width="12" height="34" rx="2" fill="#10b981" />
-              <rect x="33" y="39" width="34" height="12" rx="2" fill="#10b981" />
-              <rect x="46" y="30" width="8" height="30" rx="1" fill="#047857" />
-              <rect x="35" y="41" width="30" height="8" rx="1" fill="#047857" />
-
-              {/* Opened book vector at base */}
-              <path d="M28 64 C35 60 45 61 50 65 C55 61 65 60 72 64 L72 74 C65 70 55 71 50 75 C45 71 35 70 28 74 Z" fill="#1e1b4b" />
-              <path d="M30 66 C36 63 44 64 48 67 L48 73 C44 70 36 69 30 72 Z" fill="#ffffff" />
-              <path d="M70 66 C64 63 56 64 52 67 L52 73 C56 70 64 69 70 72 Z" fill="#ffffff" />
-
-              {/* Caduceus snake / leaf silhouette subtle in center */}
-              <circle cx="50" cy="45" r="4.5" fill="#f59e0b" />
-            </svg>
-            <div className="absolute -bottom-1 -right-1 bg-yellow-400 text-teal-950 font-bold text-[8px] px-1 rounded-full border border-white">
+          {/* School Emblem Logo */}
+          <div className="relative w-16 h-16 bg-white rounded-2xl p-1.5 flex items-center justify-center shadow-xl border-2 border-yellow-400 flex-shrink-0">
+            <img
+              src="/logo-smk.png"
+              alt="Logo SMKS Kesehatan Unaaha"
+              className="w-full h-full object-contain"
+            />
+            <div className="absolute -bottom-1 -right-1 bg-yellow-400 text-teal-950 font-black text-[8px] px-1.5 py-0.2 rounded-full border border-white shadow-sm font-mono">
               SMK
             </div>
           </div>
@@ -84,7 +67,7 @@ export default function Header({ currentStudent, isAdmin }: HeaderProps) {
               SMKS KESEHATAN UNAAHA
             </h1>
             <p className="text-xs text-emerald-100 font-medium tracking-wide">
-              Membina Tenaga Asisten Keperawatan & Farmasi Unggul • Konawe, Sulawesi Tenggara
+              Membina Tenaga Asisten Keperawatan & Farmasi Unggul • Jl. Edi Sabara, Kel. Asinua, Kec. Unaaha
             </p>
           </div>
         </div>

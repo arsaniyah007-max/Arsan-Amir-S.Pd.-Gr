@@ -103,7 +103,7 @@ export default function Login({ onLogin, onAdminLogin, subjects }: LoginProps) {
     if (adminPin === "1234") {
       onAdminLogin();
     } else {
-      setAdminError("PIN Guru salah! Gunakan PIN default '1234' untuk masuk.");
+      setAdminError("PIN otentikasi salah! Silakan masukkan PIN yang benar.");
     }
   };
 
@@ -124,18 +124,29 @@ export default function Login({ onLogin, onAdminLogin, subjects }: LoginProps) {
         <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-teal-500 rounded-full blur-3xl opacity-20" />
 
         <div className="relative z-10">
-          <div className="flex items-center gap-2 mb-6">
-            <Building2 className="w-8 h-8 text-yellow-400" />
-            <span className="font-extrabold text-sm uppercase tracking-widest text-emerald-300 font-mono">
-              PROFIL SEKOLAH
-            </span>
+          <div className="flex items-center gap-3.5 mb-6">
+            <div className="w-14 h-14 bg-white rounded-2xl p-1 shadow-xl border-2 border-yellow-400 flex items-center justify-center shrink-0">
+              <img
+                src="/logo-smk.png"
+                alt="Logo SMKS Kesehatan Unaaha"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <div>
+              <span className="font-extrabold text-[10px] uppercase tracking-widest text-emerald-300 font-mono block">
+                YAYASAN KESEHATAN NASIONAL
+              </span>
+              <span className="font-black text-sm uppercase tracking-wider text-white">
+                SMKS KESEHATAN UNAAHA
+              </span>
+            </div>
           </div>
 
           <h2 className="text-2xl sm:text-3xl font-black tracking-tight leading-tight">
             Selamat Datang di Portal Asesmen CBT
           </h2>
           <p className="mt-3 text-sm text-emerald-100/90 leading-relaxed font-light">
-            Sistem evaluasi akademik terkomputerisasi mandiri milik SMKS Kesehatan Unaaha, Konawe. Dirancang untuk menguji kompetensi klinis keperawatan dan sains farmasi secara objektif, transparan, dan berstandard nasional.
+            Sistem evaluasi akademik terkomputerisasi mandiri milik SMKS Kesehatan Unaaha. Jl. Edi Sabara, Kelurahan Asinua, Kecamatan Unaaha. Dirancang untuk menguji kompetensi klinis keperawatan dan sains farmasi secara objektif, transparan, dan berstandar nasional.
           </p>
 
           <div className="mt-8 space-y-4">
@@ -172,7 +183,7 @@ export default function Login({ onLogin, onAdminLogin, subjects }: LoginProps) {
         </div>
 
         <div className="mt-8 pt-6 border-t border-white/10 text-xs text-emerald-200/50 flex justify-between items-center relative z-10 font-mono">
-          <span>SMKS Kesehatan Unaaha</span>
+          <span>Jl. Edi Sabara, Kel. Asinua, Kec. Unaaha</span>
           <span>v2.0 (Stable-2026)</span>
         </div>
       </div>
@@ -344,7 +355,7 @@ export default function Login({ onLogin, onAdminLogin, subjects }: LoginProps) {
                   <div className="mt-2 text-[11px] text-emerald-700/90 leading-relaxed font-medium">
                     {subjects.find(s => s.id === selectedSubjectId)?.description}
                     <div className="mt-1 font-mono text-[10px] bg-white border border-emerald-100 rounded px-2 py-0.5 inline-block text-emerald-800">
-                      Durasi: {subjects.find(s => s.id === selectedSubjectId)?.durationMinutes} Menit • KKM: 75
+                      Durasi: {subjects.find(s => s.id === selectedSubjectId)?.durationMinutes} Menit • KKM: 70
                     </div>
                   </div>
                 )}
@@ -452,8 +463,8 @@ export default function Login({ onLogin, onAdminLogin, subjects }: LoginProps) {
 
               {/* PIN Helper for demonstration */}
               <div className="p-3 bg-indigo-50 border border-indigo-100 rounded-xl text-xs text-indigo-800 leading-relaxed font-semibold text-center select-none">
-                💡 PIN Master Guru saat ini adalah:{" "}
-                <span className="font-mono bg-white px-2 py-0.5 rounded border border-indigo-200 font-black tracking-widest text-stone-900 text-sm">1234</span>
+                💡 PIN Otentikasi Guru:{" "}
+                <span className="font-mono bg-white px-2 py-0.5 rounded border border-indigo-200 font-black tracking-widest text-stone-900 text-sm">****</span>
               </div>
 
               <button
@@ -470,7 +481,7 @@ export default function Login({ onLogin, onAdminLogin, subjects }: LoginProps) {
         
         {/* Footer info inside the login box */}
         <div className="mt-8 pt-4 border-t border-stone-100 text-[11px] text-stone-400 text-center flex flex-col sm:flex-row justify-between gap-2">
-          <span>Hak Cipta © SMKS Kesehatan Unaaha. All Rights Reserved.</span>
+          <span className="font-semibold text-stone-600">Hak Cipta © SMKS Kesehatan Unaaha - Arsan Amir. All Rights Reserved.</span>
           <span>Sistem CBT Teruji Keamanan Lapis Lokal</span>
         </div>
       </div>

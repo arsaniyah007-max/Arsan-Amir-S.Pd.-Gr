@@ -10,7 +10,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "x-agama",
     name: "PENDIDIKAN AGAMA",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "AGAMA10",
     description: "Evaluasi pemahaman nilai spiritual, akhlak mulia, kerukunan beragama, dan penerapan nilai ketuhanan dalam pelayanan sosial.",
     kelas: Kelas.X,
@@ -18,7 +18,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "x-pancasila",
     name: "PENDIDIKAN PANCASILA DAN PPKN",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "PPKN10",
     description: "Menguji pemahaman pilar kebangsaan, norma hukum, hak dan kewajiban warga negara, serta pengamalan sila Pancasila.",
     kelas: Kelas.X,
@@ -26,7 +26,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "x-indonesia",
     name: "BAHASA INDONESIA",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "INDO10",
     description: "Asesmen kemampuan menyusun teks laporan hasil observasi, analisis struktur karya sastra, dan penulisan sesuai EBI.",
     kelas: Kelas.X,
@@ -34,7 +34,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "x-matematika",
     name: "MATEMATIKA",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "MTK10",
     description: "Uji konsep eksponen, logaritma, persamaan linier, fungsi kuadrat, dan penalarannya dalam kalkulasi harian kesehatan.",
     kelas: Kelas.X,
@@ -42,7 +42,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "x-inggris",
     name: "BAHASA INGGRIS",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "INGGRIS10",
     description: "Evaluasi kemampuan percakapan interaktif (menyapa, menawarkan bantuan), pemahaman teks ekspositori, dan tata bahasa dasar.",
     kelas: Kelas.X,
@@ -50,7 +50,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "x-ipas",
     name: "ILMU PENGETAHUAN ALAM DAN SOSIAL (IPAS)",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "IPAS10",
     description: "Menguji pemahaman fenomena alam fisik, interaksi sosial kemasyarakatan, serta sanitasi lingkungan pendukung kesehatan.",
     kelas: Kelas.X,
@@ -58,7 +58,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "x-penjaskes",
     name: "PENJASKES",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "PJOK10",
     description: "Evaluasi prinsip kebugaran jasmani, mekanika gerak tubuh yang aman, serta pemeliharaan stamina harian petugas medis.",
     kelas: Kelas.X,
@@ -66,7 +66,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "x-seni-budaya",
     name: "SENI BUDAYA",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "SENI10",
     description: "Apresiasi karya seni rupa lokal/tradisional, dan pemanfaatannya dalam ekspresi kreatif terapi psikologis pasien.",
     kelas: Kelas.X,
@@ -74,7 +74,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "x-sejarah",
     name: "SEJARAH INDONESIA",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "SEJARAH10",
     description: "Mengkaji peninggalan peradaban Nusantara, perjuangan kemerdekaan, sejarah perkembangan institusi kesehatan nasional.",
     kelas: Kelas.X,
@@ -82,7 +82,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "x-informatika",
     name: "INFORMATIKA",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "INFOM10",
     description: "Asesmen kecakapan literasi digital, formula kalkulasi spreadsheet, serta sistem e-health pengelolaan rekam medis harian.",
     kelas: Kelas.X,
@@ -90,7 +90,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "x-mulok",
     name: "MUATAN LOKAL",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "MULOK10",
     description: "Pemanfaatan tanaman obat keluarga (TOGA) lokal Sulawesi Tenggara serta kearifan etnis lokal dalam pengobatan herbal beralasan.",
     kelas: Kelas.X,
@@ -100,7 +100,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "x-dlk-1",
     name: "Dasar Layanan Kesehatan 1",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "DLK110",
     description: "Prinsip dasar pelayanan kesehatan, komunikasi terapeutik asisten medis, etika keperawatan, dan kepatuhan hukum rahasia medis.",
     kelas: Kelas.X,
@@ -109,7 +109,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "x-dlk-2",
     name: "Dasar Layanan Kesehatan 2",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "DLK210",
     description: "Fokus pada Pencegahan dan Pengendalian Infeksi (PPI), pemilahan jenis limbah medis, teknik nirkontaminasi aseptik higienis.",
     kelas: Kelas.X,
@@ -118,7 +118,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "x-dlk-3",
     name: "Dasar Layanan Kesehatan 3",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "DLK310",
     description: "Pengukuran tanda-tanda vital secara berkala (suhu, nadi, laju nafas, tekanan darah) dan pencatatan grafik asuhan klinis.",
     kelas: Kelas.X,
@@ -127,7 +127,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "x-dlk-4",
     name: "Dasar Layanan Kesehatan 4",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "DLK410",
     description: "Aspek konseptual pemenuhan eliminasi, nutrisi tubuh, personal higienis mandi pasien bedridden, dan sirkulasi gerak dasar.",
     kelas: Kelas.X,
@@ -135,8 +135,8 @@ export const SUBJECTS: Subject[] = [
   },
   {
     id: "x-pilihan-kep",
-    name: "Mata Pelajaran Pilihan (Keperawatan)",
-    durationMinutes: 45,
+    name: "MATA PELAJARAN PILIHAN",
+    durationMinutes: 90,
     token: "PILK10",
     description: "Uji kompetensi terapan rehabilitasi fungsional mandiri, pelatihan Range of Motion pasif (ROM), asuhan lansia (Geriatri).",
     kelas: Kelas.X,
@@ -147,7 +147,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "x-dtf-1",
     name: "Dasar Layanan Teknologi Farmasi 1",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "DTF110",
     description: "Pengenalan ruang lingkup pekerjaan kefarmasian, sejarah farmasi, bentuk sediaan solida (pulvis, pulveres) dan kelembaban udara.",
     kelas: Kelas.X,
@@ -156,7 +156,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "x-dtf-2",
     name: "Dasar Layanan Teknologi Farmasi 2",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "DTF210",
     description: "Skrining administratif lembar resep dokter, arti terminologi latin penanda porsi, serta aturan pemakaian obat (S.d.d).",
     kelas: Kelas.X,
@@ -165,7 +165,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "x-dtf-3",
     name: "Dasar Layanan Teknologi Farmasi 3",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "DTF310",
     description: "Prinsip mekanik timbangan analitis gram dan miligram, kalibrasi batu timbang, dan hitungan konversi kelipatan bahan aktif.",
     kelas: Kelas.X,
@@ -174,7 +174,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "x-dtf-4",
     name: "Dasar Layanan Teknologi Farmasi 4",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "DTF410",
     description: "Penggolongan resmi sediaan terapeutik (Obat bebas, bebas terbatas, obat keras, psikotropika, dan pengawasan narkotika).",
     kelas: Kelas.X,
@@ -182,8 +182,8 @@ export const SUBJECTS: Subject[] = [
   },
   {
     id: "x-pilihan-far",
-    name: "Mata Pelajaran Pilihan (Farmasi)",
-    durationMinutes: 45,
+    name: "MATA PELAJARAN PILIHAN",
+    durationMinutes: 90,
     token: "PILF10",
     description: "Prinsip Beyond Use Date (BUD) sirup/kapsul racikan, standarisasi jamu lokal tradisional, manajemen inventaris stok metode FEFO.",
     kelas: Kelas.X,
@@ -194,7 +194,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "kep-dasar",
     name: "Ujian Kompetensi Keperawatan Dasar",
-    durationMinutes: 30,
+    durationMinutes: 90,
     token: "KEP2026",
     description: "Menguji keterampilan dasar asisten keperawatan, tanda-tanda vital, posisi pasien, kebersihan diri, dan etika klinis.",
     kelas: Kelas.XI,
@@ -204,7 +204,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xi-mulok-kep",
     name: "MUATAN LOKAL",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "MULOK11K",
     description: "Aplikasi ramuan tradisional khas Sulawesi Tenggara, pemanfaatan minyak kelapa murni (VCO) lokal untuk merawat kelembaban kulit lansia tirah baring lama.",
     kelas: Kelas.XI,
@@ -213,7 +213,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xi-pilihan-kep",
     name: "MATA PELAJARAN PILIHAN",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "PIL11K",
     description: "Pemantauan derajat kemandirian kognitif dan fisik pasien geriatri serta pilihan materi asuhan rehabilitatif lansia.",
     kelas: Kelas.XI,
@@ -222,7 +222,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xi-inggris-kep",
     name: "BAHASA INGGRIS",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "INGG11K",
     description: "Nursing English communication covering patient check-in, symptom description, pain assessment scale instructions, and therapeutic conversations.",
     kelas: Kelas.XI,
@@ -231,7 +231,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xi-pkk-kep",
     name: "PRODUK KREATIF DAN KEWIRAUSAHAAN",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "PKK11K",
     description: "Pengembangan peluang jasa homecare lansia, legalitas usaha panti wreda asuhan mandiri, dan perencanaan usaha mandiri bidang asisten kesehatan.",
     kelas: Kelas.XI,
@@ -240,7 +240,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xi-agama-kep",
     name: "PENDIDIKAN AGAMA",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "AGAMA11K",
     description: "Evaluasi pemahaman nilai akhlak mulia, bimbingan spiritual menjelang ajal (sakaratul maut), empati, dan toleransi mulia asisten keperawatan.",
     kelas: Kelas.XI,
@@ -249,7 +249,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xi-matematika-kep",
     name: "MATEMATIKA",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "MTK11K",
     description: "Penerapan kalkulasi laju tetesan infus (gtt/menit), perhitungan indeks massa tubuh (IMT), dan kalkulasi dosis keperawatan klinis lainnya.",
     kelas: Kelas.XI,
@@ -258,7 +258,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xi-ippd-kep",
     name: "IPPD",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "IPPD11K",
     description: "Membahas patofisiologi penyakit sistem respirasi, kardiovaskular, endokrin, pencernaan, serta persiapan pemeriksaan laboratorium diagnosa.",
     kelas: Kelas.XI,
@@ -267,7 +267,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xi-sejarah-kep",
     name: "SEJARAH INDONESIA",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "SEJ11K",
     description: "Sejarah sistem kesehatan Nusantara pra-kemerdekaan, perawat militer palang merah, dan sejarah pendirian Palang Merah Indonesia.",
     kelas: Kelas.XI,
@@ -276,7 +276,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xi-pancasila-kep",
     name: "PENDIDIKAN PANCASILA",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "PPKN11K",
     description: "Penerapan nilai-nilai kebangsaan, kedaulatan negara, hak asasi manusia, serta etika keadilan sosial dalam distribusi layanan asuhan keperawatan.",
     kelas: Kelas.XI,
@@ -285,7 +285,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xi-indonesia-kep",
     name: "BAHASA INDONESIA",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "INDO11K",
     description: "Penyusunan teks asuhan klinis harian secara baku, komunikasi terapeutik verbal keperawatan, serta telaah dokumen asuhan medis.",
     kelas: Kelas.XI,
@@ -294,7 +294,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xi-kdtk-kep",
     name: "KDTK",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "KDTK11K",
     description: "Prosedur pemenuhan kebutuhan dasar eliminasi foley kateter urin, penanganan luka dekubitus ringan, serta terapi oksigen nasal kanul.",
     kelas: Kelas.XI,
@@ -303,7 +303,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xi-penjaskes-kep",
     name: "PENJASKES",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "PJOK11K",
     description: "Pengaturan kebugaran kardiovaskular, pencegahan sindrom keletihan kronis (burnout) asisten medis, dan peregangan ergonomis di sela shift kerja.",
     kelas: Kelas.XI,
@@ -312,7 +312,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "farmasi-dasar",
     name: "Ujian Dasar-Dasar Kefarmasian",
-    durationMinutes: 30,
+    durationMinutes: 90,
     token: "FAR2026",
     description: "Menguji klasifikasi obat, singkatan resep resep, dosis resep, penyiapan obat jenuh/suspensi, dan pengelolaan sediaan farmasi.",
     kelas: Kelas.XI,
@@ -323,7 +323,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xi-mulok-far",
     name: "MUATAN LOKAL",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "MULOK11F",
     description: "Pemanfaatan simplisia herba lokal dari hutan hujan atau pesisir Sulawesi Tenggara untuk kemandirian kesehatan keluarga binaan.",
     kelas: Kelas.XI,
@@ -332,7 +332,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xi-pilihan-far",
     name: "MATA PELAJARAN PILIHAN",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "PIL11F",
     description: "Evaluasi pengolahan fitofarmaka modern, sediaan emulsi kosmetik alamiah, serta digitalisasi inventarisasi sediaan farmasi.",
     kelas: Kelas.XI,
@@ -341,7 +341,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xi-inggris-far",
     name: "BAHASA INGGRIS",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "INGG11F",
     description: "English terminology in professional pharmacy, interpreting drug warnings, prescribing vocabulary, and client communication.",
     kelas: Kelas.XI,
@@ -350,7 +350,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xi-farmakognosi-far",
     name: "FARMAKOGNOSI",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "KOGNOSI11F",
     description: "Studi sistematik tanaman obat (simplisia flos, folium, semen, radix), identifikasi mikroskopis sel tanaman, dan ekstraksi zat aktif alkaloid.",
     kelas: Kelas.XI,
@@ -359,7 +359,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xi-agama-far",
     name: "PENDIDIKAN AGAMA ISLAM",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "AGAMA11F",
     description: "Mengulas etika kejujuran bertransaksi obat halal, keadilan bersosial, dan tanggung jawab akhlak mulia asisten apoteker terhadap pasien.",
     kelas: Kelas.XI,
@@ -368,7 +368,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xi-matematika-far",
     name: "MATEMATIKA",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "MTK11F",
     description: "Perhitungan dosis maksimum anak umur (rumus Young, Dilling), hitungan pengenceran larutan alkohol, serta persentase rendemen simplisia.",
     kelas: Kelas.XI,
@@ -377,7 +377,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xi-pkk-far",
     name: "PRODUK KREATIF DAN KEWIRAUSAHAAN",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "PKK11F",
     description: "Perencanaan bisnis apotek mini, strategi pemasaran produk teh herbal lokal Sultra, dan analisis modal serta titik impas (BEP) produksi.",
     kelas: Kelas.XI,
@@ -386,7 +386,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xi-sejarah-far",
     name: "SEJARAH INDONESIA",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "SEJ11F",
     description: "Sejarah pemanfaatan obat tradisional Nusantara (jamu) sejak zaman dahulu, serta perkembangan apotek pertama nasional pasca kemerdekaan.",
     kelas: Kelas.XI,
@@ -395,7 +395,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xi-indonesia-far",
     name: "BAHASA INDONESIA",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "INDO11F",
     description: "Penulisan karya ilmiah kefarmasiaan, teknik menyusun teks biografi ilmuwan farmasi, serta presentasi laporan pengujian fitofarmaka.",
     kelas: Kelas.XI,
@@ -404,7 +404,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xi-administrasi-far",
     name: "ADMINISTRASI FARMASI",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "ADM11F",
     description: "Proses administrasi pembukuan sediaan farmasi di gudang, pengisian kartu stok (FIFO/FEFO), surat pesanan obat (SP-Narkotika/Psikotropika).",
     kelas: Kelas.XI,
@@ -413,7 +413,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xi-pelayanan-far",
     name: "PELAYANAN FARMASI",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "YANFAR11F",
     description: "Asesmen teknik meracik sediaan salep (unguenta), serbuk bagi (pulveres), kapsul, emulsi, sediaan suspensi, dan kalkulasi penarikan resep.",
     kelas: Kelas.XI,
@@ -422,7 +422,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xi-kimia-far",
     name: "KIMIA",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "KIM11F",
     description: "Analisis reaksi asam-basa, larutan penyangga (buffer) tubuh, kelarutan zat aktif, serta reaksi penetapan kadar menggunakan titrasi.",
     kelas: Kelas.XI,
@@ -431,7 +431,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xi-penjaskes-far",
     name: "PENJASKES",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "PJOK11F",
     description: "Prinsip ergonomis berdiri lama saat meracik sediaan di laboratorium resep, serta pemeliharaan kebugaran jantung bagi asisten kefarmasian.",
     kelas: Kelas.XI,
@@ -440,7 +440,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xi-pancasila-far",
     name: "PENDIDIKAN PANCASILA",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "PPKN11F",
     description: "Keadilan sosial dalam jaminan kesehatan nasional nasional (BPJS), kesetaraan hak akses sediaan obat esensial bermutu bagi warga negara.",
     kelas: Kelas.XI,
@@ -449,7 +449,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xi-farmakologi-far",
     name: "FARMAKOLOGI",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "KOLOGI11F",
     description: "Farmakodinamika & farmakokinetika obat saluran pencernaan (antasida, anti-diare), analgetik-antipiretik, antibiotika, serta efek samping toksik obat.",
     kelas: Kelas.XI,
@@ -460,7 +460,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "anatomi-fisiologi",
     name: "Ujian Anatomi dan Fisiologi Manusia",
-    durationMinutes: 30,
+    durationMinutes: 90,
     token: "ANA2026",
     description: "Menguji struktur tubuh manusia, sistem kardiovaskular, sistem respirasi, tulang dan persendian untuk semua siswa kesehatan.",
     kelas: Kelas.XII,
@@ -470,7 +470,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xii-pkk-kep",
     name: "PRODUK KREATIF DAN KEWIRAUSAHAAN",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "PKK12K",
     description: "Perencanaan produk kreatif pelayanan asuhan mandiri, pemasaran jasa home care, dan evaluasi hasil usaha keperawatan.",
     kelas: Kelas.XII,
@@ -479,7 +479,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xii-kdm-kep",
     name: "KEBUTUHAN DASAR MANUSIA",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "KDM12K",
     description: "Membahas pemenuhan kebutuhan dasar manusia (oksigenasi, cairan, nutrisi, eliminasi, rasa aman dan nyaman, aktivitas, istirahat).",
     kelas: Kelas.XII,
@@ -488,7 +488,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xii-ippd-kep",
     name: "ILMU PENYAKIT DAN PENUNJANG DIAGNOSTIK",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "IPPD12K",
     description: "Pemahaman patologi penyakit sistemik, pengenalan pemeriksaan penunjang laboratorium, rontgen, dan diagnosis keluhan klinis dasar.",
     kelas: Kelas.XII,
@@ -497,7 +497,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xii-inggris-kep",
     name: "BAHASA INGGRIS",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "INGG12K",
     description: "English communication in professional nursing, comprehensive medical history taking, and presenting clinical reports.",
     kelas: Kelas.XII,
@@ -506,7 +506,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xii-matematika-kep",
     name: "MATEMATIKA",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "MTK12K",
     description: "Penerapan konsep statistika parameter kesehatan, kalkulasi laju penyaluran cairan intravena, dan dosis khusus medis geriatri.",
     kelas: Kelas.XII,
@@ -515,7 +515,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xii-kdtk-kep",
     name: "KETERAMPILAN DASAR TINDAKAN KEPERAWATAN",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "KDTK12K",
     description: "Uji keterampilan praktis tindakan keperawatan esensial, pemosisian tubuh pasien secara terapeutik, serta perawatan luka dekubitus kompleks.",
     kelas: Kelas.XII,
@@ -524,7 +524,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xii-indonesia-kep",
     name: "BAHASA INDONESIA",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "INDO12K",
     description: "Penulisan laporan asuhan keperawatan terstandarisasi, penyusunan proposal program kesehatan masyarakat, serta tata bahasa baku.",
     kelas: Kelas.XII,
@@ -533,7 +533,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xii-pilihan-kep",
     name: "MATA PELAJARAN PILIHAN",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "PIL12K",
     description: "Terapi modalitas komplementer bagi lansia dengan nyeri kronis, serta bimbingan rehabilitatif fungsional khusus.",
     kelas: Kelas.XII,
@@ -542,7 +542,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xii-pancasila-kep",
     name: "PENDIDIKAN PANCASILA",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "PPKN12K",
     description: "Implementasi nilai-nilai keadilan sosial nasional, kedaulatan hak asasi bagi seluruh pasien dalam memperoleh layanan medis beradab.",
     kelas: Kelas.XII,
@@ -551,7 +551,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xii-agama-kep",
     name: "PENDIDIKAN AGAMA DAN BUDI PEKERTI",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "AGAMA12K",
     description: "Bimbingan kerohanian komprehensif, etika bimbingan sakaratul maut, nilai kesabaran, empati, serta tenggang rasa keagamaan asisten perawat.",
     kelas: Kelas.XII,
@@ -562,7 +562,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xii-pelayanan-far",
     name: "PELAYANAN FARMASI",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "YANFAR12F",
     description: "Asesmen keterampilan pelayanan farmasi klinis: dispensing resep racikan kompleks, konseling obat praktis, dan kepatuhan BUD.",
     kelas: Kelas.XII,
@@ -571,7 +571,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xii-pkk-far",
     name: "PRODUK KREATIF DAN KEWIRAUSAHAAN",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "PKK12F",
     description: "Perencanaan strategis usaha rintisan apotek, kelayakan investasi bisnis sediaan kosmetik herbal, dan perhitungan valuasi BEP/ROI.",
     kelas: Kelas.XII,
@@ -580,7 +580,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xii-kimia-far",
     name: "KIMIA FARMASI",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "KIM12F",
     description: "Menganalisis reaksi identifikasi kimia sediaan obat kualitatif dan kuantitatif, struktur senyawa obat organik, serta termokimia dasar.",
     kelas: Kelas.XII,
@@ -589,7 +589,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xii-inggris-far",
     name: "BAHASA INGGRIS",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "INGG12F",
     description: "Professional medical and pharmaceutical vocabulary, interpreting complex clinical drug labels, and communicating with patients.",
     kelas: Kelas.XII,
@@ -598,7 +598,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xii-matematika-far",
     name: "MATEMATIKA",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "MTK12F",
     description: "Kalkulasi statistika hasil uji stabilitas sediaan, perhitungan konsentrasi pengenceran larutan zat aktif, serta matematika farmasi kepresisian.",
     kelas: Kelas.XII,
@@ -607,7 +607,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xii-farmakognosi-far",
     name: "FARMAKOGNOSI",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "KOGNOSI12F",
     description: "Identifikasi lanjut sediaan simplisia obat tradisinal flos, folium, rhizoma, uji makroskopis mikroskopis khasiat fitofarmaka Nusantara.",
     kelas: Kelas.XII,
@@ -616,7 +616,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xii-farmakologi-far",
     name: "FARMAKOLOGI",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "KOLOGI12F",
     description: "Membahas farmakodinamika & efek terapeutik obat sistem saraf pusat, kardiovaskular, kemoterapeutika, serta toksikologi efek samping.",
     kelas: Kelas.XII,
@@ -625,7 +625,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xii-indonesia-far",
     name: "BAHASA INDONESIA",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "INDO12F",
     description: "Penyusunan laporan akhir karya tulis ilmiah pengujian fitofarmaka, presentasi laporan studi kelayakan bisnis apotek secara lisan/tertulis.",
     kelas: Kelas.XII,
@@ -634,7 +634,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xii-pilihan-far",
     name: "MATA PELAJARAN PILIHAN",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "PIL12F",
     description: "Skrining sediaan obat herbal terstandar (OHT), metode ekstraksi perkolasi maserasi, serta otomatisasi manajemen apotek digital.",
     kelas: Kelas.XII,
@@ -643,7 +643,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xii-pancasila-far",
     name: "PENDIDIKAN PANCASILA",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "PPKN12F",
     description: "Penerapan etika kebangsaan, gotong royong nasional, kesetaraan hak jaminan kesehatan, serta pemerataan akses sediaan farmasi esensial.",
     kelas: Kelas.XII,
@@ -652,7 +652,7 @@ export const SUBJECTS: Subject[] = [
   {
     id: "xii-agama-far",
     name: "PENDIDIKAN AGAMA DAN BUDI PEKERTI",
-    durationMinutes: 45,
+    durationMinutes: 90,
     token: "AGAMA12F",
     description: "Evaluasi kejujuran transaksi dagang obat halal, keadilan bersosial medis, serta menjaga amanah etika moral profesi kefarmasian.",
     kelas: Kelas.XII,

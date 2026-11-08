@@ -96,7 +96,7 @@ export default function App() {
     const incorrectCount = totalQuestions - correctCount;
     // Calculate Score (range 0 to 100)
     const scoreVal = totalQuestions > 0 ? Math.round((correctCount / totalQuestions) * 100) : 0;
-    const isPassed = scoreVal >= 75; // KKM threshold
+    const isPassed = scoreVal >= 70; // KKM threshold (70)
 
     const newResult: StudentResult = {
       id: `res-${Date.now()}-${currentStudent.nisn}`,
@@ -213,7 +213,7 @@ export default function App() {
       </main>
 
       {/* Corporate footer */}
-      <footer className="bg-stone-900 text-stone-550 py-6 border-t border-stone-850 mt-12 print:hidden" id="app-footer">
+      <footer className="bg-stone-900 text-stone-400 py-6 border-t border-stone-850 mt-12 print:hidden" id="app-footer">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-2">
           <div className="flex justify-center items-center gap-2 text-stone-100 flex-wrap">
             <span className="font-extrabold text-xs uppercase tracking-widest font-mono text-emerald-400">
@@ -224,7 +224,10 @@ export default function App() {
               Sistem Penyelenggara Ujian Kredensial Asisten Medis Mandiri
             </span>
           </div>
-          <p className="text-[10px] text-stone-400 font-mono">
+          <div className="text-xs font-bold text-emerald-400 font-mono tracking-wide py-0.5">
+            HAK CIPTA SMKS KESEHATAN UNAAHA - Arsan Amir
+          </div>
+          <p className="text-[10px] text-stone-500 font-mono">
             Didukung oleh Platform Digital CBT Pendidikan Tinggi Sulawesi Tenggara • Kategori Aman SSL & Enkripsi Sidang Lokal
           </p>
         </div>
